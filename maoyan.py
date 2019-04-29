@@ -23,7 +23,7 @@ def get_one_page(url):
 def parser_one_page(html):
     doc = BeautifulSoup(html, 'lxml')
     dd_list = doc.find_all('dd')
-    with open('move.txt','a') as f:
+    with open('movie.txt','a') as f:
         for item in dd_list:
             for i in item.find_all(class_="board-img"):
                 f.write(i['alt'])
